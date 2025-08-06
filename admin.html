@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم الطلبات - نظام خدمة</title>
+  <!-- Bootstrap RTL -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #4cc9f0;
+      --dark-color: #1a1a2e;
+      --light-color: #f8f9fa;
+      --success-color: #4caf50;
+      --warning-color: #ff9800;
+      --danger-color: #f44336;
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    
+    .login-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      transform: translateY(0);
+      transition: all 0.3s ease;
+    }
+    
+    .login-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .brand-logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      display: block;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    
+    .form-control {
+      border-radius: 8px;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      transition: all 0.3s;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .dashboard-header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .request-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    
+    .request-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .request-card .card-header {
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .badge {
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 20px;
+    }
+    
+    .action-btn {
+      margin-left: 8px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+    
+    .btn-call {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-details {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    
+    .btn-delete {
+      background-color: var(--danger-color);
+      color: white;
+    }
+    
+    .btn-confirm {
+      background-color: var(--success-color);
+      color: white;
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+    
+    .stats-card {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+    
+    .stats-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stats-icon {
+      font-size: 2rem;
+      opacity: 0.8;
+    }
+    
+    .search-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .search-box i {
+      position: absolute;
+      left: 15px;
+      top: 12px;
+      color: #6c757d;
+    }
+    
+    .search-box input {
+      padding-right: 15px;
+      padding-left: 40px;
+    }
+    
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .spinner {
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+    
+    @media (max-width: 768px) {
+      .action-btn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body class="animate__animated animate__fadeIn">
+  <!-- Toast Notifications -->
+  <div class="toast-container"></div>
+
+  <div class="container py-5">
+    <!-- شاشة تسجيل الدخول -->
+    <div id="login-form" class="text-center">
+      <div class="login-container animate__animated animate__fadeInUp">
+        <div class="brand-logo">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3 class="mb-4">تسجيل الدخول إلى لوحة التحكم</h3>
+        <p class="text-muted mb-4">الرجاء إدخال بيانات الاعتماد للوصول إلى النظام</p>
+        
+        <div class="mb-3">
+          <input type="email" id="email" class="form-control" placeholder="البريد الإلكتروني">
+        </div>
+        <div class="mb-3">
+          <input type="password" id="password" class="form-control" placeholder="كلمة المرور">
+        </div>
+        <button class="btn btn-primary w-100" onclick="login()">
+          <i class="fas fa-sign-in-alt me-2"></i> تسجيل الدخول
+        </button>
+        
+        <div class="mt-3 text-center">
+          <a href="#" class="text-muted" onclick="alert('سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني')">
+            <small>نسيت كلمة المرور؟</small>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- محتوى لوحة التحكم -->
+    <div id="dashboard" class="hidden">
+      <!-- Header -->
+      <div class="dashboard-header animate__animated animate__fadeIn">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h4><i class="fas fa-tachometer-alt me-2"></i> لوحة تحكم الطلبات</h4>
+            <p class="mb-0">إدارة طلبات الخدمات من العملاء</p>
+          </div>
+          <button class="btn btn-light" onclick="logout()">
+            <i class="fas fa-sign-out-alt me-2"></i> تسجيل الخروج
+          </button>
+        </div>
+      </div>
+      
+      <!-- Stats Cards -->
+      <div class="row mb-4 animate__animated animate__fadeIn animate__delay-1s">
+        <div class="col-md-4">
+          <div class="stats-card card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6 class="text-muted">إجمالي الطلبات</h6>
+                  <h3 id="total-requests">0</h3>
+                </div>
+                <div class="stats-icon text-primary">
+                  <i class="fas fa-clipboard-list"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-card card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6 class="text-muted">طلبات مؤكدة</h6>
+                  <h3 id="confirmed-requests">0</h3>
+                </div>
+                <div class="stats-icon text-success">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-card card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6 class="text-muted">طلبات قيد الانتظار</h6>
+                  <h3 id="pending-requests">0</h3>
+                </div>
+                <div class="stats-icon text-warning">
+                  <i class="fas fa-clock"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Search and Filter -->
+      <div class="row mb-4 animate__animated animate__fadeIn animate__delay-1s">
+        <div class="col-md-6">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" class="form-control" placeholder="ابحث في الطلبات...">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <select id="filter-select" class="form-select">
+            <option value="all">جميع الطلبات</option>
+            <option value="confirmed">طلبات مؤكدة</option>
+            <option value="pending">طلبات قيد الانتظار</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Loading Spinner -->
+      <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">جاري التحميل...</span>
+        </div>
+        <p class="mt-2">جاري تحميل البيانات...</p>
+      </div>
+      
+      <!-- Requests Container -->
+      <div id="requests-container" class="row"></div>
+      
+      <!-- No Results Message -->
+      <div id="no-results" class="text-center py-5 hidden">
+        <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+        <h5>لا توجد طلبات متاحة</h5>
+        <p class="text-muted">لم يتم العثور على أي طلبات تطابق معايير البحث</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase v9 (modular) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    import { getFirestore, collection, getDocs, doc, deleteDoc, updateDoc, query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyATtfSHgXS2KfWXxQDZZEPgXI1Zo1dyehE",
+      authDomain: "khidma-58caa.firebaseapp.com",
+      projectId: "khidma-58caa",
+      storageBucket: "khidma-58caa.firebasestorage.app",
+      messagingSenderId: "1091814213057",
+      appId: "1:1091814213057:web:9adb99a2c2023e995b1b40",
+      measurementId: "G-T51K0BKQQD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const fieldLabels = {
+  "budget": "الميزانية",
+  "coverage": "التغطية",
+  "trip-type": "نوع الرحلة",
+  "insurance-type": "نوع التأمين",
+  "destination": "الوجهة",
+  "duration": "المدة",
+  "travel-date": "تاريخ السفر",
+  "product-type": "نوع المنتج",
+  "country": "الوجهة",
+  "pages": "عدد الصفحات",
+  "service-type": "نوع الخدمة",
+  "description": "الوصف",
+  "app-type": "نوع التطبيق",
+  "website": "الموقع الإلكتروني",
+  "website-type": "نوع الموقع",
+  "quantity": "الكمية",
+  "honeymoon": "شهر عسل",
+  "service-typ":"نوع الخدمة",
+  "country-live":"مكان المقادرة"
+
+};
+
+
+    const loginForm = document.getElementById('login-form');
+    const dashboard = document.getElementById('dashboard');
+    const container = document.getElementById('requests-container');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-input');
+    const filterSelect = document.getElementById('filter-select');
+
+    // Global variables
+    let allRequests = [];
+    let filteredRequests = [];
+
+
+    
+
+    function showToast(message, type = 'success') {
+      const toast = document.createElement('div');
+      toast.className = `toast show align-items-center text-white bg-${type} border-0`;
+      toast.setAttribute('role', 'alert');
+      toast.setAttribute('aria-live', 'assertive');
+      toast.setAttribute('aria-atomic', 'true');
+      toast.innerHTML = `
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2"></i>
+            ${message}
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      `;
+      document.querySelector('.toast-container').appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      if (!email || !password) {
+        showToast('الرجاء إدخال البريد الإلكتروني وكلمة المرور', 'danger');
+        return;
+      }
+      
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          showToast('تم تسجيل الدخول بنجاح');
+        })
+        .catch(err => {
+          let errorMessage = 'حدث خطأ أثناء تسجيل الدخول';
+          if (err.code === 'auth/wrong-password') {
+            errorMessage = 'كلمة المرور غير صحيحة';
+          } else if (err.code === 'auth/user-not-found') {
+            errorMessage = 'البريد الإلكتروني غير مسجل';
+          }
+          showToast(errorMessage, 'danger');
+        });
+    }
+
+    function logout() {
+      signOut(auth)
+        .then(() => {
+          showToast('تم تسجيل الخروج بنجاح');
+        })
+        .catch(err => {
+          showToast('حدث خطأ أثناء تسجيل الخروج', 'danger');
+        });
+    }
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        loginForm.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        loadRequests();
+      } else {
+        dashboard.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+      }
+    });
+
+    function loadRequests() {
+  loadingSpinner.style.display = 'block';
+  container.innerHTML = '';
+  noResults.classList.add('hidden');
+
+  const requestsRef = collection(db, "requests");
+
+  onSnapshot(requestsRef, (querySnapshot) => {
+    allRequests = [];
+    querySnapshot.forEach((docSnap) => {
+      allRequests.push({ id: docSnap.id, ...docSnap.data() });
+    });
+
+    updateStats(allRequests);
+    filterRequests();
+    loadingSpinner.style.display = 'none';
+  }, (error) => {
+    showToast('حدث خطأ أثناء تحميل الطلبات', 'danger');
+    console.error("Error loading requests: ", error);
+    loadingSpinner.style.display = 'none';
+  });
+}
+
+
+    function updateStats(requests) {
+      document.getElementById('total-requests').textContent = requests.length;
+      document.getElementById('confirmed-requests').textContent = requests.filter(r => r.status === 'confirmed').length;
+      document.getElementById('pending-requests').textContent = requests.filter(r => r.status !== 'confirmed').length;
+    }
+
+    function filterRequests() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filterValue = filterSelect.value;
+      
+      filteredRequests = allRequests.filter(request => {
+        const matchesSearch = 
+          request.service.toLowerCase().includes(searchTerm) ||
+          request.userName.toLowerCase().includes(searchTerm) ||
+          request.userEmail.toLowerCase().includes(searchTerm) ||
+          request.userPhone.includes(searchTerm) ||
+          (request.details.description && request.details.description.toLowerCase().includes(searchTerm));
+        
+        const matchesFilter = 
+          filterValue === 'all' || 
+          (filterValue === 'confirmed' && request.status === 'confirmed') ||
+          (filterValue === 'pending' && request.status !== 'confirmed');
+        
+        return matchesSearch && matchesFilter;
+      });
+      
+      renderRequests();
+    }
+
+   function renderRequests() {
+  container.innerHTML = '';
+
+  if (filteredRequests.length === 0) {
+    noResults.classList.remove('hidden');
+    return;
+  }
+
+  noResults.classList.add('hidden');
+
+  filteredRequests.forEach(request => {
+    const confirmed = request.status === 'confirmed';
+    const card = document.createElement('div');
+    card.className = 'col-md-6 col-lg-4';
+    card.innerHTML = `
+      <div class="request-card card">
+        <div class="card-header">
+          <span>${request.service}</span>
+          ${confirmed ? 
+            '<span class="badge bg-success"><i class="fas fa-check-circle me-1"></i> مؤكد</span>' : 
+            '<span class="badge bg-warning text-dark"><i class="fas fa-clock me-1"></i> قيد الانتظار</span>'}
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <h6 class="text-muted mb-1">معلومات العميل</h6>
+            <p class="mb-1"><i class="fas fa-user me-2"></i> ${request.userName}</p>
+            <p class="mb-1"><i class="fas fa-envelope me-2"></i> ${request.userEmail}</p>
+            <p class="mb-1"><i class="fas fa-phone me-2"></i> ${request.userPhone}</p>
+          </div>
+
+          <div class="mb-3">
+  <h6 class="text-muted mb-1">تفاصيل الخدمة</h6>
+  ${
+    Object.entries(request.details).map(([key, value]) => {
+      return `<p class="mb-1"><strong>${fieldLabels[key] || key}:</strong> ${value}</p>`;
+    }).join('')
+  }
+</div>
+
+
+          <div class="d-flex flex-wrap">
+            <button class="btn btn-whatsapp action-btn" onclick="window.open('https://wa.me/${request.userPhone}', '_blank')">
+              <i class="fab fa-whatsapp me-1"></i> واتساب
+            </button>
+            <button class="btn btn-call action-btn" onclick="window.open('tel:${request.userPhone}')">
+              <i class="fas fa-phone me-1"></i> اتصال
+            </button>
+            <button class="btn btn-details action-btn" onclick="showDetailsModal('${request.id}')">
+              <i class="fas fa-info-circle me-1"></i> التفاصيل
+            </button>
+            <button class="btn btn-delete action-btn" onclick="deleteRequest('${request.id}')">
+              <i class="fas fa-trash me-1"></i> حذف
+            </button>
+            ${!confirmed ? `
+            <button class="btn btn-confirm action-btn" onclick="confirmRequest('${request.id}')">
+              <i class="fas fa-check me-1"></i> تأكيد
+            </button>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function showDetailsModal(docId) {
+  const request = allRequests.find(r => r.id === docId);
+  if (!request) return;
+
+  // Create modal dynamically
+  const modal = document.createElement('div');
+  modal.className = 'modal fade';
+  modal.id = 'detailsModal';
+  modal.setAttribute('tabindex', '-1');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">تفاصيل الطلب</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="text-muted">معلومات العميل</h6>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <p><strong>الاسم:</strong> ${request.userName}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>الهاتف:</strong> ${request.userPhone}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>البريد الإلكتروني:</strong> ${request.userEmail}</p>
+            </div>
+          </div>
+
+          <h6 class="text-muted">تفاصيل الخدمة</h6>
+          <div class="row mb-3">
+  ${Object.entries(request.details).map(([key, value]) => {
+    return `<div class="col-md-6"><p><strong>${fieldLabels[key] || key}:</strong> ${value}</p></div>`;
+  }).join('')}
+</div>
+
+
+          
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const modalInstance = new bootstrap.Modal(modal);
+  modalInstance.show();
+
+  modal.addEventListener('hidden.bs.modal', () => {
+    modal.remove();
+  });
+} 
+
+    async function deleteRequest(docId) {
+      if (confirm('هل أنت متأكد من حذف هذا الطلب؟')) {
+        try {
+          await deleteDoc(doc(db, "requests", docId));
+          showToast('تم حذف الطلب بنجاح');
+          loadRequests();
+        } catch (error) {
+          showToast('حدث خطأ أثناء حذف الطلب', 'danger');
+          console.error("Error deleting document: ", error);
+        }
+      }
+    }
+
+    async function confirmRequest(docId) {
+      try {
+        await updateDoc(doc(db, "requests", docId), { status: "confirmed" });
+        showToast('تم تأكيد الطلب بنجاح');
+        loadRequests();
+      } catch (error) {
+        showToast('حدث خطأ أثناء تأكيد الطلب', 'danger');
+        console.error("Error confirming request: ", error);
+      }
+    }
+
+    // Event listeners for search and filter
+    searchInput.addEventListener('input', filterRequests);
+    filterSelect.addEventListener('change', filterRequests);
+
+    // Make functions available globally
+    window.login = login;
+    window.logout = logout;
+    window.deleteRequest = deleteRequest;
+    window.confirmRequest = confirmRequest;
+    window.showDetailsModal = showDetailsModal;
+  </script>
+
+
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

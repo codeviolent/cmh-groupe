@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - KHIDMA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="KHIDMA Logo">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li class="dropdown">
+                    <a href="#">خدماتنا <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services/app-development.html">تطوير التطبيقات</a></li>
+                        <li><a href="services/web-design.html">تصميم المواقع</a></li>
+                        <li><a href="services/digital-marketing.html">التسويق الرقمي</a></li>
+                        <li><a href="services/import.html">الاستيراد من الخارج</a></li>
+                        <li><a href="services/visa.html">خدمات التأشيرات</a></li>
+                        <li><a href="services/insurance.html">خدمات التأمينات</a></li>
+                        <li><a href="services/tourism.html">تنظيم الرحلات</a></li>
+                        <li><a href="services/services_publics.html">خدمات عامة </a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">تواصل معنا</a></li>
+               
+                <li class="lang-switcher">
+                    <a href="#" class="active">العربية <i class="fa-solid fa-globe"></i></a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- هيرو الصفحة -->
+    <section class="page-hero" style="background-image: url('images/contact-bg.jpg');">
+        <div class="container">
+            <h1>تواصل معنا</h1>
+            <p>فريق الدعم لدينا جاهز للإجابة على جميع استفساراتك</p>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>أرسل لنا رسالة</h2>
+                    <p>سنرد عليك في أقرب وقت ممكن</p>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم بالكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">اختر الموضوع</option>
+                                <option value="general">استفسار عام</option>
+                                <option value="services">استفسار عن الخدمات</option>
+                                <option value="support">دعم فني</option>
+                                <option value="complaint">شكوى أو اقتراح</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>معلومات التواصل</h2>
+                    <p>يمكنك التواصل معنا عبر أي من الوسائل التالية:</p>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>العنوان</h3>
+                            <p>موريتانيا - نواكشوط - تقاطع دار المختار ولد داداه</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>الهاتف</h3>
+                            <p>+222 38138429</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@cmhgroupe.com</p>
+                            <p>support@cmhgroupe.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>واتساب</h3>
+                            <p>+222 38138429</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-hours">
+                        <h3>ساعات العمل</h3>
+                        <ul>
+                            <li>
+                                <span>الأثنين - الثلثاء - الأربعاء - الخميس - الجمعة - السبت</span>
+                                <span>9:00 ص - 8:00 م</span>
+                            </li>
+                            <li>
+                                <span>الأحد</span>
+                                <span>إجازة</span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d6400.264762442248!2d-15.976123393434786!3d18.096846670324318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d18.0962116!2d-15.976223!4m3!3m2!1d18.0962144!2d-15.9762218!5e0!3m2!1sar!2s!4v1753799674400!5m2!1sar!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>أسئلة متكررة</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">ما هي ساعات عمل الدعم الفني؟</button>
+                    <div class="faq-answer">
+                        <p>فريق الدعم الفني لدينا يعمل من الأحد إلى الخميس من الساعة 8 صباحاً حتى 5 مساءً، ويوم السبت من 10 صباحاً حتى 4 مساءً.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">كم تستغرق وقتاً للرد على استفساري؟</button>
+                    <div class="faq-answer">
+                        <p>نحن نحرص على الرد على جميع الاستفسارات خلال 24 ساعة عمل كحد أقصى، وقد يكون الرد أسرع حسب نوع الاستفسار.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">هل لديكم فرع في مدينتي؟</button>
+                    <div class="faq-answer">
+                        <p>حالياً لدينا مقر رئيسي في الرياض، ولكننا نقدم خدماتنا في جميع أنحاء المملكة عن بعد، ويمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني أو وسائل التواصل الاجتماعي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">كيف يمكنني متابعة طلبي؟</button>
+                    <div class="faq-answer">
+                        <p>بعد تسجيل الدخول إلى لوحة التحكم الخاصة بك، يمكنك الاطلاع على حالة جميع طلباتك وتفاصيلها وتاريخ التحديثات عليها.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">ما هي وسائل الدفع المتاحة؟</button>
+                    <div class="faq-answer">
+                        <p>نحن نقبل الدفع عبر التحويل البنكي، وبطاقات الائتمان، ومدى، وApple Pay، وSTC Pay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="KHIDMA Logo" class="footer-logo">
+                    <p>شركة cmh groupe تقدم حلولاً متكاملة وخدمات عالية الجودة تلبي احتياجات الأفراد والشركات في مختلف المجالات.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="services/app-development.html">تطوير التطبيقات</a></li>
+                        <li><a href="services/web-design.html">تصميم المواقع</a></li>
+                        <li><a href="services/digital-marketing.html">التسويق الرقمي</a></li>
+                        <li><a href="services/import.html">الاستيراد من الخارج</a></li>
+                        <li><a href="services/visa.html">خدمات التأشيرات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اتصل بنا</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>موريتانيا - نواكشوط - تقاطع المختار ولد داداه</li>
+                        <li><i class="fas fa-phone"></i> +222 38138429   </li>
+                        <li><i class="fas fa-envelope"></i> البريد: info@cmhgroupe.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +222 38138429   </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 cmh groupe. جميع الحقوق محفوظة.</p>
+                <div class="footer-legal">
+                    <a href="#">شروط الخدمة</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/contact.js"></script>
+    <script  src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنظيم الرحلات السياحية - KHIDMA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.png" alt="KHIDMA Logo">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="../index.html">الرئيسية</a></li>
+                <li class="dropdown">
+                    <a href="#">خدماتنا <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="app-development.html">تطوير التطبيقات</a></li>
+                        <li><a href="web-design.html">تصميم المواقع</a></li>
+                        <li><a href="digital-marketing.html">التسويق الرقمي</a></li>
+                        <li><a href="import.html">الاستيراد من الخارج</a></li>
+                        <li><a href="visa.html">خدمات التأشيرات</a></li>
+                        <li><a href="insurance.html">خدمات التأمينات</a></li>
+                        <li><a href="tourism.html">تنظيم الرحلات</a></li>
+                         <li><a href="services_publics.html">خدمات عامة </a></li>
+                    </ul>
+                </li>
+               
+                <li><a href="../contact.html">تواصل معنا</a></li>
+              
+                <li class="lang-switcher">
+                    <a href="#" class="active">العربية <i class="fa-solid fa-globe"></i></a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- هيرو الصفحة -->
+   <section class="page-hero">
+    <!-- فيديو الخلفية -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline >
+            <source src="../images/tourism.mp4" type="video/mp4">
+            <!-- Fallback للصورة إذا لم يعمل الفيديو -->
+            <img src="../images/app-dev-bg.jpg" alt="تطوير التطبيقات">
+        </video>
+        <!-- طبقة تظليل للفيديو لتحسين قراءة النص -->
+        <div class="video-overlay"></div>
+    </div>
+        <div class="container">
+             <img src="../images/logonoir.png" alt="KHIDMA Logo" style="width: 100px;">
+            <h1>تنظيم الرحلات السياحية</h1>
+            <p>حجوزات فنادق وطيران وتنظيم رحلات سياحية حول العالم</p>
+        </div>
+    </section>
+
+    <!-- تفاصيل الخدمة -->
+    <section class="service-details">
+        <div class="container">
+            <div class="service-content">
+                <h2>حلول سياحية متكاملة</h2>
+                <p>في KHIDMA، نقدم خدمات تنظيم رحلات سياحية احترافية تلبي جميع احتياجات المسافرين، بدءًا من حجز تذاكر الطيران والفنادق وحتى تنظيم البرامج السياحية الكاملة في مختلف الوجهات حول العالم.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i class="fas fa-plane"></i>
+                        <h3>حجز تذاكر الطيران</h3>
+                        <p>حجز تذاكر طيران بأسعار مميزة لجميع الخطوط الجوية</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i class="fas fa-hotel"></i>
+                        <h3>حجز الفنادق</h3>
+                        <p>حجوزات فنادق بجميع الفئات في مختلف الوجهات السياحية</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i class="fas fa-passport"></i>
+                        <h3>ترتيب التأشيرات</h3>
+                        <p>خدمات كاملة للحصول على تأشيرات السفر المطلوبة</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i class="fas fa-umbrella-beach"></i>
+                        <h3>برامج سياحية</h3>
+                        <p>تنظيم برامج سياحية متكاملة تشمل جميع الأنشطة</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i class="fas fa-bus"></i>
+                        <h3>النقل والمواصلات</h3>
+                        <p>ترتيب وسائل النقل والمواصلات خلال الرحلة</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <i class="fas fa-headset"></i>
+                        <h3>دعم خلال الرحلة</h3>
+                        <p>دعم ومساعدة على مدار الساعة خلال فترة السفر</p>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h2>خطوات تنظيم الرحلة</h2>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>التخطيط</h3>
+                            <p>دراسة احتياجاتك وتحديد الوجهة والميزانية</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>الحجوزات</h3>
+                            <p>حجز تذاكر الطيران والفنادق والأنشطة</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>التأشيرات</h3>
+                            <p>إعداد المستندات وترتيب الحصول على التأشيرات</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>التأمين</h3>
+                            <p>ترتيب تأمين السفر المناسب لنوع الرحلة</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <h3>التسليم</h3>
+                            <p>تسليم جميع المستندات وتفاصيل الرحلة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technologies-section">
+                    <h2>الوجهات السياحية</h2>
+                    <div class="tech-tabs">
+                        <button class="tab-btn active" data-tab="europe">أوروبا</button>
+                        <button class="tab-btn" data-tab="asia">آسيا</button>
+                        <button class="tab-btn" data-tab="arabic">العالم العربي</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="europe">
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <img src="../images/paris.png" alt="Paris">
+                                <h4>باريس، فرنسا</h4>
+                                <p>رومانسية الفن والثقافة في مدينة النور</p>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../images/istanbul.png" alt="Istanbul">
+                                <h4>إسطنبول، تركيا</h4>
+                                <p>جسر بين الشرق والغرب بثقافة فريدة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="asia">
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <img src="../images/malaysia.png" alt="Malaysia">
+                                <h4>كوالالمبور، ماليزيا</h4>
+                                <p>مزيج ساحر من الحداثة والتقاليد</p>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../images/bali.png" alt="Bali">
+                                <h4>بالي، إندونيسيا</h4>
+                                <p>جنة الاسترخاء والشواطئ الخلابة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="arabic">
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <img src="../images/dubai.png" alt="Dubai">
+                                <h4>دبي، الإمارات</h4>
+                                <p>عاصمة الرفاهية والتسوق العالمي</p>
+                            </div>
+                            <div class="tech-item">
+                                <img src="../images/sharm.png" alt="Sharm">
+                                <h4>شرم الشيخ، مصر</h4>
+                                <p>واحة الاستجمام والرياضات المائية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-form">
+                <div class="form-container">
+                    <h2>اطلب خدمة تنظيم رحلة</h2>
+                    <p>املأ النموذج وسيتصل بك فريقنا خلال 24 ساعة</p>
+                    
+                    <form id="tourism-form">
+                        <div class="form-group">
+                            <label for="name">الاسم بالكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trip-type">نوع الرحلة</label>
+                            <select id="trip-type" name="trip-type" required>
+                                <option value="">اختر نوع الرحلة</option>
+                                <option value="family">عائلية</option>
+                                <option value="honeymoon">شهر عسل</option>
+                                <option value="business">عمل</option>
+                                <option value="friends">أصدقاء</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination">الوجهة المطلوبة</label>
+                            <input type="text" id="destination" name="destination" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travel-date">تاريخ السفر المتوقع</label>
+                            <input type="date" id="travel-date" name="travel-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duration">مدة الرحلة</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">اختر المدة</option>
+                                <option value="3-5">3-5 أيام</option>
+                                <option value="6-10">6-10 أيام</option>
+                                <option value="11-15">11-15 يوم</option>
+                                <option value="15+">أكثر من 15 يوم</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">الميزانية التقريبية</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">اختر الميزانية</option>
+                                <option value="5-10 mils">5,000 - 10,000 MRU</option>
+                                <option value="10-20 mils">10,000 - 20,000 MRU</option>
+                                <option value="20-30 mils">20,000 - 30,000 MRU</option>
+                                <option value="30+ mils">أكثر من 30,000 MRU</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">تفاصيل إضافية</label>
+                            <textarea id="description" name="description" rows="5"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">إرسال الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>الأسئلة الشائعة</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">كم من الوقت مقدماً يجب أن أحجز رحلتي؟</button>
+                    <div class="faq-answer">
+                        <p>يفضل الحجز قبل شهرين إلى ثلاثة أشهر من تاريخ السفر للحصول على أفضل الأسعار وتوافر الفنادق، خاصة في المواسم السياحية العالية. ومع ذلك، يمكننا ترتيب رحلات في وقت أقصر حسب المتاح.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">هل يمكنني تعديل برنامج الرحلة بعد الحجز؟</button>
+                    <div class="faq-answer">
+                        <p>نعم، يمكن تعديل البرنامج حسب رغبتك مع مراعاة سياسات التعديل والإلغاء للفنادق وشركات الطيران. قد تنطوي بعض التعديلات على رسوم إضافية حسب الشروط.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">هل تشمل الخدمة مرشدين سياحيين؟</button>
+                    <div class="faq-answer">
+                        <p>نعم، يمكننا توفير مرشدين سياحيين متحدثين باللغة العربية في معظم الوجهات السياحية، سواء مرشدين خاصين أو جولات جماعية، حسب تفضيلاتك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">ما هي وسائل الدفع المتاحة؟</button>
+                    <div class="faq-answer">
+                        <p>نقبل الدفع عبر التحويل البنكي، وبطاقات الائتمان، ومدى، وApple Pay، وSTC Pay. يمكن تقسيم</p>
+                    </div>
+                </div>
+        </div>
+        <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="cmh groupe" class="footer-logo">
+                    <img src="images/logo-white1.png" alt="cmh groupe" class="footer-logo">
+                    <p>شركة cmh groupe تقدم حلولاً متكاملة وخدمات عالية الجودة تلبي احتياجات الأفراد والشركات في مختلف المجالات.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>خدماتنا</h3>
+                    <ul>
+                        <li><a href="app-development.html">تطوير التطبيقات</a></li>
+                        <li><a href="web-design.html">تصميم المواقع</a></li>
+                        <li><a href="digital-marketing.html">التسويق الرقمي</a></li>
+                        <li><a href="import.html">الاستيراد من الخارج</a></li>
+                        <li><a href="visa.html">خدمات التأشيرات</a></li>
+                         <li><a href="services_publics.html">خدمات عامة </a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اتصل بنا</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>موريتانيا - نواكشوط - تقاطع المختار ولد داداه</li>
+                        <li><i class="fas fa-phone"></i> +222 38138429   </li>
+                        <li><i class="fas fa-envelope"></i> البريد: info@cmhgroupe.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +222 38138429   </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 cmh groupe. جميع الحقوق محفوظة.</p>
+                <div class="footer-legal">
+                    <a href="#">شروط الخدمة</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+<script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/services.js"></script>
+    <script type="module" src="../js/main.js"></script> 
+</body>
+</html>
